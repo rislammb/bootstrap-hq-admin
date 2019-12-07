@@ -1,0 +1,78 @@
+.app-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: $primary-hex;
+  z-index: 3;
+
+  &__logo {
+    flex: 1 0 auto;
+    color: #fff;
+    font-family: $app-font-serif;
+    text-align: center;
+    font-size: 26px;
+    padding: 0 15px;
+    line-height: 50px;
+    &:hover {
+      text-decoration: none;
+    }
+    @media (min-width: 768px) {
+      flex: 0 0 auto;
+      display: block;
+    }
+  }
+
+  .app-search {
+    position: relative;
+    display: flex;
+    align-self: center;
+    margin-right: 15px;
+
+    @media (max-width: 520px) {
+      display: none;
+    }
+    &__input {
+      border: 0;
+      padding: 5px 10px;
+      padding-right: 30px;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    &__button {
+      position: absolute;
+      right: 0;
+      top: 5px;
+      padding: 0 10px;
+      border: 0;
+      background: none;
+      color: rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+    }
+  }
+
+  .app-nav {
+    @include list-unstyled();
+    display: flex;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    align-items: center;
+    @media (min-width: 768px) {
+      flex: 1 0 auto;
+    }
+
+    &__item {
+      display: block;
+      padding: 18px;
+      line-height: 18px;
+      color: #fff;
+      transition: background-color 0.3s ease;
+      &:hover,
+      &:focus {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
